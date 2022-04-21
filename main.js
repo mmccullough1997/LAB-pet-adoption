@@ -11,7 +11,7 @@ const pets = [
       color: "Brown",
       specialSkill: "Just picks the tomatoes off of a sandwich instead of requesting a whole new sandwich.",
       type: "dino",
-      imageUrl: "http://www.jozilife.co.za/wp-content/uploads/The-Dino-Expo.jpg"
+      imageUrl: "https://media.nature.com/lw800/magazine-assets/d41586-022-00209-0/d41586-022-00209-0_20071828.jpg"
     },
     {
       name: "Whiskers",
@@ -53,7 +53,7 @@ const pets = [
       color: "Grey",
       specialSkill: "Comfortable in the outdoors for up to eight hours.",
       type: "dino",
-      imageUrl: "http://www.theouthousers.com/images/jck//ThanosCopter/news/grumpasaur.jpg"
+      imageUrl: "https://www.akcpetinsurance.com/res/akc/blog/2022/natural-remedies-hip-dysplasia-dogs/hip-dysplasia-header.jpg"
     },
     {
       name: "Sassy",
@@ -74,7 +74,7 @@ const pets = [
       color: "Orange",
       specialSkill: "Can be around food without staring creepily at it.",
       type: "dino",
-      imageUrl: "http://www.cantref.com/userfiles/events/walking%20dino.jpg?w=600"
+      imageUrl: "https://images.mlssoccer.com/image/private/t_editorial_landscape_12_desktop/f_auto/mls-atl-prd/w8ahb9x3yj76tcrignzy.jpg"
     },
     {
       name: "Buster",
@@ -102,56 +102,56 @@ const pets = [
       color: "Red",
       specialSkill: "Burps minimally.",
       type: "cat",
-      imageUrl: "http://cathumor.net/wp-content/uploads/2013/12/cat-humor-funny-karate-cat-2.jpg"
+      imageUrl: "https://i.guim.co.uk/img/media/684c9d087dab923db1ce4057903f03293b07deac/205_132_1915_1150/master/1915.jpg?width=700&quality=85&auto=format&fit=max&s=56a2e35a42e37dcb12c3a7472c134443"
     },
     {
       name: "Smokey",
       color: "Brown",
       specialSkill: "Drives at a safe rate of speed in snow or rain.",
       type: "dino",
-      imageUrl: "https://images.readwrite.com/wp-content/uploads/2018/03/t-rex-dino-quiz-e1490854556549.jpg"
+      imageUrl: "https://cdn.britannica.com/49/161649-050-3F458ECF/Bernese-mountain-dog-grass.jpg"
     },
     {
       name: "Muffin",
       color: "Yellow",
       specialSkill: "Does not freak out if you haven’t seen his favorite movie (The Big Lebowski).",
       type: "cat",
-      imageUrl: "http://www.funnycatsite.com/pictures/Close_Up_Yawn.jpg"
+      imageUrl: "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1000w,f_auto,q_auto:best/rockcms/2022-03/black-lab-favorite-dog-main-220315-e8e0ee.jpg"
     },
     {
       name: "Salem",
       color: "Brown",
       specialSkill: "Proficient in air guitar",
       type: "dino",
-      imageUrl: "https://www.nation.co.ke/image/view/-/4078922/highRes/1742693/-/maxw/600/-/1453yvh/-/DINO.jpg"
+      imageUrl: "https://www.helpguide.org/wp-content/uploads/king-charles-spaniel-resting-head-768.jpg"
     },
     {
       name: "Callie",
       color: "Blue",
       specialSkill: "Listens attentively to boring stories.",
       type: "dog",
-      imageUrl: "http://dailynewsdig.com/wp-content/uploads/2014/03/Creative-And-Funny-Dog-Stock-Photography-Pictures-2.jpg"
+      imageUrl: "https://www.science.org/do/10.1126/science.aba2340/full/dogs_1280p_0.jpg"
     },
     {
       name: "Spooky",
       color: "Black",
       specialSkill: "Uses litter box at appropriate hours.",
       type: "cat",
-      imageUrl: "http://www.funnycatsite.com/pictures/Lazy_White_Cat.jpg"
+      imageUrl: "https://www.thesprucepets.com/thmb/meRd41is751DsQQjofaiKV_ZUBg=/941x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/cat-talk-eyes-553942-hero-df606397b6ff47b19f3ab98589c3e2ce.jpg"
     },
     {
       name: "Miss kitty",
       color: "Red",
       specialSkill: "Owns a Nintendo Power Glove.",
       type: "dino",
-      imageUrl: "https://img.buzzfeed.com/buzzfeed-static/static/2015-11/2/12/enhanced/webdr15/anigif_enhanced-29802-1446485228-10.gif?crop=250:165;0,0&downsize=715"
+      imageUrl: "https://www.the-sun.com/wp-content/uploads/sites/6/2022/02/RR-COMP-p30-dino.jpg?w=660"
     },
     {
       name: "Snuggles",
       color: "Orange",
       specialSkill: "Is comfortable with jokes about his receding hairline.",
       type: "cat",
-      imageUrl: "http://funnyanimalphoto.com/wp-content/uploads/2013/08/cat_caught_mouse_thegatewaypundit.jpg"
+      imageUrl: "https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png"
     },
     {
       name: "Buddy",
@@ -165,14 +165,14 @@ const pets = [
       color: "Brown",
       specialSkill: "Participates in karaoke but does not force others to go out to karaoke.",
       type: "dog",
-      imageUrl: "http://www.dogbreedplus.com/dog_breeds/images/basset-hound-4.jpg"
+      imageUrl: "https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg?w=1845"
     },
     {
       name: "Salem",
       color: "Red",
       specialSkill: "Knows the words to 4 rap songs.",
       type: "cat",
-      imageUrl: "http://funbk.s3.amazonaws.com/wp-content/uploads/2016/06/funny-cat-video-which-will-make-you-laugh-louder.jpg"
+      imageUrl: "https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=700&quality=85&auto=format&fit=max&s=fa2a6e634973defc13bfcbae1b8e954d"
     },
     {
       name: "Bubba",
@@ -207,6 +207,39 @@ const pets = [
       color: "Red",
       specialSkill: "Doesn’t get weirded out by the word “moist.”",
       type: "dino",
-      imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
+      imageUrl: "https://images.immediate.co.uk/production/volatile/sites/4/2020/12/dino-80bbd77.jpg?quality=90&webp=true&resize=940,400"
     }
   ];
+
+  // for (const iteratorArray of pets) {
+  //     console.log(iterator.type);
+  // }
+
+for (const iterator of pets) {
+  iterator.image = iterator.imageUrl
+  delete iterator.imageUrl
+  iterator.typeOfPet = iterator.type
+  delete iterator.type
+}
+
+pets.forEach((num, i) => {
+  num.id = i +1
+})
+// console.log(pets);
+
+const myCards = document.querySelector("#myCards");
+
+let domTarget = "";
+for(const selection of pets) {
+  domTarget += 
+    `<div class="card" style="width: 18rem;">
+    <header class="name" "justify-content:center" >${selection.name}</header>
+    <img src="${selection.image}" class="card-img-top" alt="...">
+    <div class="card-body" class="mainText">
+      <h5 class="card-title">${selection.color}</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>`;
+}
+myCards.innerHTML = domTarget;
