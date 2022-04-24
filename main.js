@@ -10,7 +10,7 @@ const pets = [
       name: "Trouble",
       color: "Brown",
       specialSkill: "Just picks the tomatoes off of a sandwich instead of requesting a whole new sandwich.",
-      type: "dino",
+      type: "dog",
       imageUrl: "https://media.nature.com/lw800/magazine-assets/d41586-022-00209-0/d41586-022-00209-0_20071828.jpg"
     },
     {
@@ -52,7 +52,7 @@ const pets = [
       name: "Ginger",
       color: "Grey",
       specialSkill: "Comfortable in the outdoors for up to eight hours.",
-      type: "dino",
+      type: "dog",
       imageUrl: "https://www.akcpetinsurance.com/res/akc/blog/2022/natural-remedies-hip-dysplasia-dogs/hip-dysplasia-header.jpg"
     },
     {
@@ -73,7 +73,7 @@ const pets = [
       name: "Coco",
       color: "Orange",
       specialSkill: "Can be around food without staring creepily at it.",
-      type: "dino",
+      type: "dog",
       imageUrl: "https://images.mlssoccer.com/image/private/t_editorial_landscape_12_desktop/f_auto/mls-atl-prd/w8ahb9x3yj76tcrignzy.jpg"
     },
     {
@@ -101,28 +101,28 @@ const pets = [
       name: "Coco",
       color: "Red",
       specialSkill: "Burps minimally.",
-      type: "cat",
+      type: "dog",
       imageUrl: "https://i.guim.co.uk/img/media/684c9d087dab923db1ce4057903f03293b07deac/205_132_1915_1150/master/1915.jpg?width=700&quality=85&auto=format&fit=max&s=56a2e35a42e37dcb12c3a7472c134443"
     },
     {
       name: "Smokey",
       color: "Brown",
       specialSkill: "Drives at a safe rate of speed in snow or rain.",
-      type: "dino",
+      type: "dog",
       imageUrl: "https://cdn.britannica.com/49/161649-050-3F458ECF/Bernese-mountain-dog-grass.jpg"
     },
     {
       name: "Muffin",
       color: "Yellow",
-      specialSkill: "Does not freak out if you haven’t seen his favorite movie (The Big Lebowski).",
-      type: "cat",
+      specialSkill: `Does not freak out if you haven’t seen his favorite movie (The Big Lebowski).`,
+      type: "dog",
       imageUrl: "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1000w,f_auto,q_auto:best/rockcms/2022-03/black-lab-favorite-dog-main-220315-e8e0ee.jpg"
     },
     {
       name: "Salem",
       color: "Brown",
       specialSkill: "Proficient in air guitar",
-      type: "dino",
+      type: "dog",
       imageUrl: "https://www.helpguide.org/wp-content/uploads/king-charles-spaniel-resting-head-768.jpg"
     },
     {
@@ -211,10 +211,7 @@ const pets = [
     }
   ];
 
-  // for (const iteratorArray of pets) {
-  //     console.log(iterator.type);
-  // }
-
+//rename keys in object to fit format
 for (const iterator of pets) {
   iterator.image = iterator.imageUrl
   delete iterator.imageUrl
@@ -222,24 +219,55 @@ for (const iterator of pets) {
   delete iterator.type
 }
 
+//assign id to each object
 pets.forEach((num, i) => {
   num.id = i +1
 })
-// console.log(pets);
 
-const myCards = document.querySelector("#myCards");
-
-let domTarget = "";
-for(const selection of pets) {
-  domTarget += 
-    `<div class="card" style="width: 18rem;">
-    <header class="name" "justify-content:center" >${selection.name}</header>
-    <img src="${selection.image}" class="card-img-top" alt="...">
-    <div class="card-body" class="mainText">
-      <h5 class="card-title">${selection.color}</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-</div>`;
+//utility function
+const renderToDom = (divId,textToRender) => {
+  const selectedElement = document.querySelector(divId);
+  selectedElement.innerHTML = textToRender;
 }
-myCards.innerHTML = domTarget;
+
+//function to add cards
+const cardsOnDom = (array) => {
+  let domTargetCards = "";
+  for(const item of array) {
+    domTargetCards += 
+    `<div class="card" style="width: 18rem;">
+      <header class="name" "justify-content:center" >${item.name}</header>
+      <img src="${item.image}" class="card-img-top" alt="...">
+      <div class="card-body" class="mainText">
+        <h5 class="card-title">${item.color}</h5>
+        <p class="card-text">${item.specialSkill}</p>
+        <a href="#" class="btn btn-primary mt-auto">Go somewhere</a>
+      </div>
+    </div>`;
+  }
+  renderToDom('#myCards',domTargetCards);
+};
+
+//event listeners
+const eventListeners = () => {
+  //filter
+  document.querySelector('#myButtons').addEventListener('click', (e) => {
+    //check that event listener is working
+    console.log('You clicked a filter button', e.target.id);
+    if (e.target.id === 'all') {
+      cardsOnDom(pets);
+    } else if (e.target.id) {
+      const types = pets.filter(taco => taco.typeOfPet === e.target.id);
+        cardsOnDom(types);
+    }
+  })
+}
+
+
+//startup
+const startUp = () => {
+  cardsOnDom(pets);
+  eventListeners();
+}
+
+startUp();
