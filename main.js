@@ -243,6 +243,9 @@ const cardsOnDom = (array) => {
         <p class="card-text">${item.specialSkill}</p>
         <a href="#" class="btn btn-primary mt-auto">Go somewhere</a>
       </div>
+      <div id='delete'>
+      <button class="btn btn-danger" id="delete--${item.id}">X</button>
+    </div>
     </div>`;
   }
   renderToDom('#myCards',domTargetCards);
@@ -261,7 +264,27 @@ const eventListeners = () => {
         cardsOnDom(types);
     }
   })
+  //buttons on cards
+  document.querySelector('#myCards').addEventListener('click', (e) => {
+    //check to make sure e.target.id isn't empty
+    if(e.target.id){
+      const idStuff = e.target.id.split("--");
+      console.log(idStuff);
+      const index = idStuff[1];
+      console.log(index);
+
+
+      if(e.target.id.includes('delete')){
+        //check to make sure you picked delete
+        console.log('right pick')
+        pets.splice(index-1,1);
+        cardsOnDom(pets);
+      }
+
+    }
+  })
 }
+
 
 
 //startup
