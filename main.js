@@ -205,7 +205,7 @@ const pets = [
     {
       name: "Lucy",
       color: "Red",
-      specialSkill: "Doesn’t get weirded out by the word “moist.”",
+      specialSkill: `Doesn’t get weirded out by the word moist.`,
       type: "dino",
       imageUrl: "https://images.immediate.co.uk/production/volatile/sites/4/2020/12/dino-80bbd77.jpg?quality=90&webp=true&resize=940,400"
     }
