@@ -6,6 +6,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
 }
 /* {
   color: green;
@@ -30,4 +31,10 @@ img {
 
 header {
   text-align: center;
+}
+
+.topButtons {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
 }
