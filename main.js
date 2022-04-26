@@ -230,6 +230,66 @@ const renderToDom = (divId,textToRender) => {
   selectedElement.innerHTML = textToRender;
 }
 
+//add pets modal form
+const petsBtnModal = () => {
+  const domString = `
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#add-pet">
+    Add Pet
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="add-pet" tabindex="-1" aria-labelledby="add-pet" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen-md-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Pet</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="modal-body">
+          <form>
+
+          <div class="form-floating mb-3">
+            <input class="form-control form-control-lg" type="text" placeholder="Image" id="image" aria-label="image" required>
+            <label for="image">Image</label>
+          </div>
+
+          
+          <div class="form-floating mb-3">
+            <input class="form-control form-control-lg" type="text" placeholder="Name" id="name" aria-label="name" required>
+            <label for="name">Name</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input class="form-control form-control-lg" type="text" placeholder="Color" id="color" aria-label="color" required>
+            <label for="color">Color</label>
+          </div>
+      
+          <div class="form-floating mb-3">
+            <select class="form-select form-control-lg" id="typeOfPet" aria-label="typeOfPet" required>
+              <option value="">Select a category</option>
+              <option value="dog">Dog</option>
+              <option value="cat">Cat</option>
+              <option value="dino">Dino</option>
+            </select>
+            <label for="typeOfPet">Type</label>
+          </div>
+          
+          <button 
+            type="submit" 
+            class="btn btn-success" 
+          >
+            Submit
+          </button>
+        </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  renderToDom('#createBtnContainer', domString);
+
+}
 //function to add cards
 const cardsOnDom = (array) => {
   let domTargetCards = "";
@@ -241,7 +301,7 @@ const cardsOnDom = (array) => {
       <div class="card-body" class="mainText">
         <h5 class="card-title">${item.color}</h5>
         <p class="card-text">${item.specialSkill}</p>
-        <a href="#" class="btn btn-primary mt-auto">Go somewhere</a>
+        <div class="${item.typeOfPet} mt-auto" id="card-type">${item.typeOfPet.slice(0,1).toUpperCase() + item.typeOfPet.slice(1)}</div>
       </div>
       <div id='delete'>
       <button class="btn btn-danger" id="delete--${item.id}">X</button>
@@ -251,8 +311,12 @@ const cardsOnDom = (array) => {
   renderToDom('#myCards',domTargetCards);
 };
 
+
+
 //event listeners
 const eventListeners = () => {
+
+  const petModal = new bootstrap.Modal(document.querySelector('#add-pet'));
   //filter
   document.querySelector('#myButtons').addEventListener('click', (e) => {
     //check that event listener is working
@@ -264,31 +328,64 @@ const eventListeners = () => {
         cardsOnDom(types);
     }
   })
-  //buttons on cards
+
+   // FORM SUBMIT
+   const form = document.querySelector('form');
+   form.addEventListener('submit', (e) => {
+     e.preventDefault(); // this goes in EVERY form submit to prevent page reload
+     // grab the values from the form inputs and create an object
+     const newPetObj = {
+       image: document.querySelector('#image').value,
+       name: document.querySelector('#name').value,
+       color: document.querySelector('#color').value,
+       typeOfPet: document.querySelector('#typeOfPet').value,
+     };
+ 
+     // push that object to the data array
+     pets.push(newPetObj);
+     pets.forEach((num, i) => {
+      num.id = i +1
+    })
+
+     
+     // rerender cards using the cardsOnDom function and pass it the updated data array
+     cardsOnDom(pets);
+      petModal.hide();
+     form.reset();
+   });
+
+  //  console.log(pets);
+
+  //delete buttons on cards
   document.querySelector('#myCards').addEventListener('click', (e) => {
     //check to make sure e.target.id isn't empty
     if(e.target.id){
-      const idStuff = e.target.id.split("--");
-      console.log(idStuff);
-      const index = idStuff[1];
-      console.log(index);
+      // const idStuff = e.target.id.split("--");
+      // console.log(idStuff);
+      // const index = idStuff[1];
+      // console.log(index);
+
+      const [, idStuff] = e.target.id.split('--');
+      // console.log(idStuff, 'hi);
+      // console.log(pets[idStuff]);
+      // const index = pets.findIndex((taco) => taco.id === idStuff);
+      // console.log(index, 'me again');
+      
+      console.log(idStuff,'wassup bitch');
 
 
       if(e.target.id.includes('delete')){
-        //check to make sure you picked delete
-        console.log('right pick')
-        pets.splice(index-1,1);
+        console.log(pets[idStuff-1]);
+        pets.splice(pets[idStuff-1],1);
         cardsOnDom(pets);
       }
-
     }
   })
 }
 
-
-
 //startup
 const startUp = () => {
+  petsBtnModal();
   cardsOnDom(pets);
   eventListeners();
 }
