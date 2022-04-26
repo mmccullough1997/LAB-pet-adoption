@@ -1,5 +1,5 @@
 body {
-  background-color: aliceblue;
+  background-color: grey
 }
 
 .targetCards {
@@ -31,10 +31,28 @@ img {
 
 header {
   text-align: center;
+  margin-top: 20px;
 }
 
 .topButtons {
   display: flex;
   justify-content: space-around;
   margin: 10px;
+  margin-bottom: 30px;
+}
+
+#createBtnContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.dog{
+  background-color: green;
+
 }
