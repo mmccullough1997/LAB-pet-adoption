@@ -7,14 +7,8 @@ body {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
+  justify-content: space-between;
 }
-/* {
-  color: green;
-} */
-
-/* #myCards.p {
-  color: red;
-} */
 
 .name{
   text-align: center;
@@ -54,5 +48,12 @@ form {
 
 .dog{
   background-color: green;
+}
 
+.cat{
+  background-color: blue;
+}
+
+.dino{
+  background-color: yellow;
 }
