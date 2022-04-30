@@ -26,7 +26,7 @@ const petsBtnModal = () => {
 
           <div class="form-floating mb-3">
             <input class="form-control form-control-lg" type="text" placeholder="Image" id="image" aria-label="image" required>
-            <label for="image">Image</label>
+            <label for="image">Image Link</label>
           </div>
 
           
