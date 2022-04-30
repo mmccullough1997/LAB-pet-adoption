@@ -39,6 +39,11 @@ const petsBtnModal = () => {
             <input class="form-control form-control-lg" type="text" placeholder="Color" id="color" aria-label="color" required>
             <label for="color">Color</label>
           </div>
+
+          <div class="form-floating mb-3">
+            <input class="form-control form-control-lg" type="text" placeholder="specialSkill" id="specialSkill" aria-label="specialSkill" required>
+            <label for="specialSkill">Special Skill</label>
+          </div>
       
           <div class="form-floating mb-3">
             <select class="form-select form-control-lg" id="typeOfPet" aria-label="typeOfPet" required>

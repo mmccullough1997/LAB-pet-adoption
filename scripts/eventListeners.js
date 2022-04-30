@@ -30,6 +30,7 @@ const eventListeners = () => {
        image: document.querySelector('#image').value,
        name: document.querySelector('#name').value,
        color: document.querySelector('#color').value,
+       specialSkill: document.querySelector('#specialSkill').value,
        typeOfPet: document.querySelector('#typeOfPet').value,
      };
  
